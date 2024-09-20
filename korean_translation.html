@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡單翻譯器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>簡單中文/韓文翻譯器</h2>
+        <textarea id="chineseText" placeholder="輸入中文"></textarea>
+        <textarea id="koreanText" placeholder="輸入韓文"></textarea>
+        <button onclick="translateText()">翻譯</button>
+    </div>
+
+    <script>
+        function translateText() {
+            let chineseText = document.getElementById("chineseText").value;
+            let koreanText = document.getElementById("koreanText").value;
+            
+            if (chineseText) {
+                document.getElementById("koreanText").value = "這是翻譯的韓文：" + chineseText;
+            } else if (koreanText) {
+                document.getElementById("chineseText").value = "這是翻譯的中文：" + koreanText;
+            } else {
+                alert("請在任一文本框中輸入內容");
+            }
+        }
+    </script>
+</body>
+</html>
